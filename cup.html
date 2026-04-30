@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上擲筊</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            padding: 30px;
+            text-align: center;
+        }
+        .btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+        a { color: blue; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>線上擲筊</h1>
+    <button class="btn" onclick="toss()">點我擲筊</button>
+    <p>請虔誠祈求後點擊按鈕</p>
+    <hr>
+    <div id="result"></div>
+    <br>
+    <a href="index.html">返回首頁</a>
+
+    <script>
+        function toss() {
+            const r = Math.random();
+            let text, img1, img2;
+            if (r < 0.33) {
+                text = "結果：聖筊：表示神明允許、同意，或行事會順利。";
+                img1 = "陽";
+                img2 = "陰";
+            } else if (r < 0.66) {
+                text = "結果：笑筊：表示神明不認同，行事需三思。";
+                img1 = "陽";
+                img2 = "陽";
+            } else {
+                text = "結果：陰筊：表示神明不允許，建議暫停計畫。";
+                img1 = "陰";
+                img2 = "陰";
+            }
+            document.getElementById('result').innerHTML = `
+                <p>${text}</p>
+                <div style="border:1px solid #ccc; padding:10px; display:inline-block;">
+                    <div style="display:inline-block; margin:10px;">
+                        <div style="width:80px; height:100px; background-color:red; border-radius: 0 40px 40px 0; margin:5px;"></div>
+                        <p>${img1}</p>
+                    </div>
+                    <div style="display:inline-block; margin:10px;">
+                        <div style="width:80px; height:100px; background-color:red; border-radius: 0 40px 40px 0; margin:5px; clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 50%);"></div>
+                        <p>${img2}</p>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

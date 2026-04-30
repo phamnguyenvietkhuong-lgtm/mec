@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教師姓名查詢</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            padding: 30px;
+        }
+        a { color: blue; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>教師姓名查詢</h1>
+    <form onsubmit="event.preventDefault(); searchTeacher();">
+        <label>請輸入教師姓名：</label>
+        <input type="text" id="keyword" placeholder="例如：楊子青">
+        <button type="submit">查詢</button>
+    </form>
+    <div id="result"></div>
+    <br>
+    <a href="index.html">返回首頁</a>
+
+    <script>
+        const teachers = ["楊子青", "王小明", "李美麗", "張建國", "陳武林"];
+        function searchTeacher() {
+            const keyword = document.getElementById('keyword').value;
+            const filtered = teachers.filter(t => t.includes(keyword));
+            document.getElementById('result').innerHTML = filtered.length ? 
+                `<p>找到的教師：${filtered.join('、')}</p>` : 
+                `<p>找不到相關教師！</p>`;
+        }
+    </script>
+</body>
+</html>

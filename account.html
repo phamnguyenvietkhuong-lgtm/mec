@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帳密 POST 驗證</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            padding: 30px;
+        }
+        a { color: blue; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <script>
+        function submitForm() {
+            const account = document.getElementById('account').value;
+            const pwd = document.getElementById('pwd').value;
+            document.body.innerHTML = `
+                <p>您輸入的帳號是：${account}；密碼為：${pwd}</p>
+                <br>
+                <a href="index.html">返回首頁</a>
+            `;
+        }
+    </script>
+
+    <form onsubmit="event.preventDefault(); submitForm();">
+        <label>帳號：</label>
+        <input type="text" id="account" value="范阮越姜"><br><br>
+        <label>密碼：</label>
+        <input type="password" id="pwd" value="123456"><br><br>
+        <button type="submit">確定送出</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>進階次方與根號</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            padding: 30px;
+        }
+        a { color: blue; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <script>
+        function calculateAdv() {
+            const num = parseFloat(document.getElementById('num').value);
+            const type = document.getElementById('type').value;
+            let result;
+            if (type === 'square') {
+                result = num * num;
+                document.body.innerHTML = `
+                    <p>${num} 的平方是：${result}</p>
+                    <br>
+                    <a href="index.html">返回首頁</a>
+                `;
+            } else if (type === 'sqrt') {
+                result = Math.sqrt(num);
+                document.body.innerHTML = `
+                    <p>${num} 的平方根是：${result}</p>
+                    <br>
+                    <a href="index.html">返回首頁</a>
+                `;
+            }
+        }
+    </script>
+
+    <h1>進階次方與根號</h1>
+    <form onsubmit="event.preventDefault(); calculateAdv();">
+        <label>請輸入數字：</label>
+        <input type="number" id="num" value="16"><br><br>
+        <label>請選擇運算：</label>
+        <select id="type">
+            <option value="square">平方</option>
+            <option value="sqrt">平方根</option>
+        </select><br><br>
+        <button type="submit">計算</button>
+    </form>
+</body>
+</html>

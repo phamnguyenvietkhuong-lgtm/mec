@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>即將上映電影</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            padding: 30px;
+        }
+        .movie-item {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        a { color: blue; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>即將上映電影列表</h1>
+    <p>更新日期：
+        <script>
+            document.write(new Date().toLocaleString());
+        </script>
+    </p>
+
+    <div class="movie-item">
+        <h3>《蜘蛛夫人：超感覺醒》</h3>
+        <p>上映日期：2025-05-01</p>
+    </div>
+    <div class="movie-item">
+        <h3>《死侍與金剛狼》</h3>
+        <p>上映日期：2025-05-15</p>
+    </div>
+    <div class="movie-item">
+        <h3>《美國隊長4：新世界秩序》</h3>
+        <p>上映日期：2025-05-20</p>
+    </div>
+
+    <br>
+    <a href="index.html">返回首頁</a>
+</body>
+</html>

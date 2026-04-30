@@ -1,0 +1,18 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/mis", "destination": "/mis.html" },
+    { "source": "/today", "destination": "/today.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/welcome", "destination": "/get.html" },
+    { "source": "/account", "destination": "/account.html" },
+    { "source": "/math", "destination": "/math.html" },
+    { "source": "/math_adv", "destination": "/math_adv.html" },
+    { "source": "/cup", "destination": "/cup.html" },
+    { "source": "/read", "destination": "/read.html" },
+    { "source": "/teacher", "destination": "/teacher.html" },
+    { "source": "/course_crawl", "destination": "/course_crawl.html" },
+    { "source": "/movie2", "destination": "/movie2.html" },
+    { "source": "/movie3", "destination": "/movie3.html" }
+  ]
+}

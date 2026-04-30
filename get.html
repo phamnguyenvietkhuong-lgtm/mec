@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET 傳值範例</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            padding: 30px;
+        }
+        h1 { color: blue; }
+        a { color: blue; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>歡迎 
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const user = params.get('u') || '范阮越姜';
+            const dep = params.get('dep') || '靜宜資管';
+            document.write(user + ' 蒞臨');
+        </script>
+    </h1>
+    <p>您就讀 
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const dep = params.get('dep') || 'None';
+            document.write(dep);
+        </script>
+    </p>
+    <br>
+    <a href="index.html">返回首頁</a>
+</body>
+</html>

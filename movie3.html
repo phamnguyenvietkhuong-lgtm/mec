@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電影查詢系統</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            padding: 30px;
+        }
+        .movie-item {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        input, button {
+            padding: 8px;
+            font-size: 16px;
+        }
+        button {
+            cursor: pointer;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        a { color: blue; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>電影資料庫查詢</h1>
+    <p>請輸入關鍵字查詢電影名稱：</p>
+    <input type="text" id="keyword" placeholder="例如：蜘蛛、美國">
+    <button onclick="searchMovie()">查詢</button>
+
+    <div id="result"></div>
+
+    <br><br>
+    <a href="index.html">返回首頁</a>
+
+    <script>
+        const movies = [
+            { name: "蜘蛛夫人：超感覺醒", date: "2025-05-01" },
+            { name: "死侍與金剛狼", date: "2025-05-15" },
+            { name: "美國隊長4：新世界秩序", date: "2025-05-20" },
+            { name: "蜘蛛俠：穿越新宇宙", date: "2025-06-01" },
+            { name: "復仇者聯盟5", date: "2025-07-01" }
+        ];
+
+        function searchMovie() {
+            const keyword = document.getElementById('keyword').value;
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '';
+
+            if (!keyword) {
+                resultDiv.innerHTML = "<p>請輸入關鍵字！</p>";
+                return;
+            }
+
+            const filtered = movies.filter(m => m.name.includes(keyword));
+            if (filtered.length === 0) {
+                resultDiv.innerHTML = "<p>找不到相關電影！</p>";
+                return;
+            }
+
+            filtered.forEach(movie => {
+                resultDiv.innerHTML += `
+                    <div class="movie-item">
+                        <h3>${movie.name}</h3>
+                        <p>上映日期：${movie.date}</p>
+                    </div>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
