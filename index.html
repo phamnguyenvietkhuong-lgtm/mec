@@ -25,7 +25,7 @@
             color: #333;
             margin-bottom: 30px;
             font-size: 28px;
-            border-bottom: 2px solid #4a90e2;
+            border-bottom: 2px solid #e91e63;
             padding-bottom: 10px;
         }
         .button-grid {
@@ -42,34 +42,42 @@
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
+            transition: opacity 0.2s;
         }
-        .btn-blue { background-color: #4a90e2; }
-        .btn-green { background-color: #4CAF50; }
-        .btn-orange { background-color: #e67e22; }
-        .btn-purple { background-color: #9b59b6; }
+        .btn:hover {
+            opacity: 0.85;
+        }
+        /* 红色系按钮颜色 */
+        .btn-red { background-color: #f44336; }    /* 标准红色 */
+        .btn-pink { background-color: #e91e63; }   /* 粉红色 */
+        .btn-lightred { background-color: #ff8a80; }/* 浅红色 */
     </style>
 </head>
 <body>
     <div class="container">
         <h1>范阮越姜的個人首頁</h1>
         <div class="button-grid">
-            <a href="#" class="btn btn-blue">課程資訊</a>
-            <a href="today.html" class="btn btn-blue">今天日期</a>
-            <a href="#" class="btn btn-blue">關於我</a>
-            <a href="#" class="btn btn-green">GET 傳值範例</a>
+            <!-- 第1排 -->
+            <a href="/mis" class="btn btn-red">課程資訊</a>
+            <a href="/today" class="btn btn-pink">今天日期</a>
+            <a href="/about" class="btn btn-lightred">關於我</a>
+            <a href="/welcome" class="btn btn-red">GET 傳值範例</a>
 
-            <a href="#" class="btn btn-green">POST 驗證</a>
-            <a href="#" class="btn btn-green">基礎數學運算</a>
-            <a href="#" class="btn btn-green">進階次方與根號</a>
-            <a href="#" class="btn btn-orange">線上繳交</a>
+            <!-- 第2排 -->
+            <a href="/account" class="btn btn-pink">POST 驗證</a>
+            <a href="/math" class="btn btn-lightred">基礎數學運算</a>
+            <a href="/math_adv" class="btn btn-red">進階次方與根號</a>
+            <a href="/cup" class="btn btn-pink">線上擲筊</a>
 
-            <a href="#" class="btn btn-purple">Firestore 資料讀取</a>
-            <a href="#" class="btn btn-purple">教師姓名查詢</a>
-            <a href="#" class="btn btn-purple">爬取課程</a>
-            <a href="movie2.html" class="btn btn-purple">爬取即將上映電影</a>
+            <!-- 第3排 -->
+            <a href="/read" class="btn btn-lightred">Firestore 資料讀取</a>
+            <a href="/teacher" class="btn btn-red">教師姓名查詢</a>
+            <a href="/course_crawl" class="btn btn-pink">爬取課程</a>
+            <a href="/movie2" class="btn btn-lightred">爬取即將上映電影</a>
 
-            <a href="movie2.html" class="btn btn-purple">爬取電影進資料庫</a>
-            <a href="movie3.html" class="btn btn-purple">查詢電影資料庫</a>
+            <!-- 第4排 -->
+            <a href="/movie2" class="btn btn-red">爬取電影進資料庫</a>
+            <a href="/movie3" class="btn btn-pink">查詢電影資料庫</a>
         </div>
     </div>
 </body>
